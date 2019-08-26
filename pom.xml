@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+    <modules>
+        <module>guides-dashboard-client</module>
+        <module>guides-dashboard-facade</module>
+        <module>guides-dashboard-service-consumer</module>
+        <module>guides-dashboard-service-provider</module>
+        <module>guides-dashboard-ark-provider</module>
+        <module>guides-dashboard-ark-master</module>
+    </modules>
+    <parent>
+        <groupId>com.alipay.sofa</groupId>
+        <artifactId>sofaboot-dependencies</artifactId>
+        <version>3.1.4</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>io.sofastack</groupId>
+    <artifactId>sofastack-dashboard-guides</artifactId>
+    <version>1.0.0</version>
+    <name>sofastack-dashboard-guides</name>
+    <description>sofastack dashboard guides</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+   <dependencyManagement>
+       <dependencies>
+           <dependency>
+               <groupId>io.sofastack</groupId>
+               <artifactId>guides-dashboard-facade</artifactId>
+               <version>1.0.0</version>
+           </dependency>
+
+           <dependency>
+               <artifactId>curator-client</artifactId>
+               <groupId>org.apache.curator</groupId>
+               <version>2.9.1</version>
+           </dependency>
+           <dependency>
+               <artifactId>curator-framework</artifactId>
+               <groupId>org.apache.curator</groupId>
+               <version>2.9.1</version>
+           </dependency>
+
+           <dependency>
+               <groupId>com.alipay.sofa</groupId>
+               <artifactId>sofa-dashboard-client</artifactId>
+               <version>1.0.0-SNAPSHOT</version>
+           </dependency>
+
+           <dependency>
+               <groupId>com.alipay.sofa</groupId>
+               <artifactId>web-ark-plugin</artifactId>
+               <version>0.6.0</version>
+           </dependency>
+           <dependency>
+               <groupId>com.alipay.sofa</groupId>
+               <artifactId>config-ark-plugin</artifactId>
+               <version>0.6.0</version>
+           </dependency>
+
+           <dependency>
+               <groupId>com.alipay.sofa</groupId>
+               <artifactId>sofa-ark-spi</artifactId>
+               <version>0.6.0</version>
+           </dependency>
+
+           <dependency>
+               <groupId>com.alipay.sofa</groupId>
+               <artifactId>sofa-ark-springboot-starter</artifactId>
+               <version>0.6.0</version>
+           </dependency>
+
+           <!--SOFARegistry 依赖-->
+           <dependency>
+               <groupId>com.alipay.sofa</groupId>
+               <artifactId>registry-client-all</artifactId>
+               <version>5.2.1</version>
+           </dependency>
+
+
+       </dependencies>
+   </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.21.0</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
